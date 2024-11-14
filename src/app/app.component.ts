@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import {RouterLink, RouterOutlet} from '@angular/router';
+import {MatChip, MatChipSet} from "@angular/material/chips";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink, MatChipSet, MatChip],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'AngularSignals';
+  title = 'Angular Signals';
 }

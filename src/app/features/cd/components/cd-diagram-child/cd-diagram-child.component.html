@@ -1,0 +1,30 @@
+<li>
+  {{ triggerCD() }}
+  <div class="content" #content>
+    <div class="text-center">
+      <h3 class="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">{{depth() === 4 ? 'Root ' : 'Child '}}{{componentId}}</h3>
+      <div class="info">
+        <div class="text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">depth: {{depth()}} </div>
+        <div class="info_cd">
+          <cd-diagram-counter title="CD: " [count]="cdCount" class="text-lg font-medium"/>
+          <cd-diagram-counter title="Signal: " [count]="cdCountSig()" class="text-lg font-medium"/>
+        </div>
+      </div>
+      <p class="text-balance text-base font-semibold tracking-tight text-gray-500">Trigger Condition: </p>
+      <div class="flex items-center justify-center gap-x-6">
+        <button mat-flat-button (click)="incrementCount()">Manual</button>
+        @if (!intervalId) {
+          <button mat-flat-button (click)="startInterval()">Interval</button>
+        } @else {
+          <button mat-flat-button (click)="stopInterval()">Stop</button>
+        }
+      </div>
+    </div>
+  </div>
+  @if (depth() > 1) {
+    <ul>
+      <cd-diagram-child [depth]="depth() - 1" class="diagram-child" />
+      <cd-diagram-child [depth]="depth() - 2" class="diagram-child" />
+    </ul>
+  }
+</li>

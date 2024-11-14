@@ -1,0 +1,8 @@
+<h3>Problem</h3>
+
+@for (product of products; track product.name) {
+  <cd-problems-child
+    [product]="product"
+    (statusChanged)="onStatusChanged($event)"/>
+}
+<p>Total: {{ total }}</p>

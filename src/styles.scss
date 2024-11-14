@@ -1,1 +1,110 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+a { text-decoration: none; }
+
+.diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-child {
+    position: relative;
+    padding: 20px 5px 0 5px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 50%;
+      border-top: 1px solid black;
+      width: 50%;
+      height: 20px;
+    }
+
+    &::after {
+      right: auto;
+      left: 50%;
+      border-left: 1px solid black;
+    }
+
+    &:only-child::after,
+    &:only-child::before {
+      display: none;
+    }
+
+    &:only-child {
+      padding-top: 0;
+    }
+
+    &:first-child::before,
+    &:last-child::after {
+      border: 0 none;
+    }
+
+    &:last-child::before {
+      border-right: 1px solid black;
+      border-radius: 0 5px 0 0;
+    }
+
+    &:first-child::after {
+      border-radius: 5px 0 0 0;
+    }
+  }
+
+  ul {
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+  }
+
+  &-child, li {
+    list-style-type: none;
+    flex-wrap: nowrap;
+    text-align: center;
+  }
+
+  ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid black;
+    width: 0;
+    height: 20px;
+  }
+
+  li div.content {
+    border: 4px solid black;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-family: arial, verdana, tahoma, serif;
+    font-size: 11px;
+    display: inline-block;
+    border-radius: 7px;
+    color: blue;
+    font-weight: bold;
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_cd {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
