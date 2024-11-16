@@ -1,0 +1,17 @@
+<div class="mt-4">
+  <p class="text-xl"><strong>Computed Signal:</strong></p>
+  <p class="text-xl">Count: {{counter()}}</p>
+  <p class="text-xl">Double count: {{doubleCounter()}}</p>
+  <div class="flex">
+    <button mat-flat-button class="mr-1.5" (click)="increment()">Increment count</button>
+    <button mat-flat-button class="mr-1.5" (click)="decrement()">Decrement count</button>
+  </div>
+</div>
+
+<div class="mt-4">
+  <p class="text-xl"><strong>Glitch:</strong></p>
+  <p class="text-xl">{{combined$ | async}}</p>
+  <div class="flex">
+    <button mat-flat-button class="mr-1.5" (click)="update()">Update BehaviorSubject</button>
+  </div>
+</div>

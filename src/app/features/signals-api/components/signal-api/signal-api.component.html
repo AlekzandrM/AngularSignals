@@ -1,1 +1,18 @@
-<p>Signal API works!</p>
+<div class="mt-4">
+  <p class="text-xl"><strong>Writable signal:</strong> {{writableSig()}}</p>
+  <div class="flex">
+    <button mat-flat-button class="mr-1.5" (click)="setNewValue()">Set a new value</button>
+    <button mat-flat-button (click)="updateNewValue()">Update a new value</button>
+  </div>
+</div>
+
+<div class="mt-4">
+  <p class="text-xl"><strong>Writable signal with  ValueEqualityFn:</strong> {{productSig().name}}</p>
+  <div class="flex">
+    <button mat-flat-button class="mr-1.5" (click)="setProductName()">Set product name</button>
+  </div>
+</div>
+
+<!--<div class="mt-4">-->
+<!--  <p class="text-xl"><strong>Lazy Signal:</strong> {{helloSig()}}</p>-->
+<!--</div>-->

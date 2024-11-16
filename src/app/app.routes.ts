@@ -22,6 +22,16 @@ export const routes: Routes = [
   },
   {
     path: 'api',
-    loadComponent: () => import('./features/signals-api/components/signal-api/signal-api.component').then(m => m.SignalAPI),
+    loadComponent: () => import('./features/signals-api/components/signal-parent/signal-parent.component').then(m => m.SignalParentComponent),
+    children: [
+      {
+        path: 'signal',
+        loadComponent: () => import('./features/signals-api/components/signal-api/signal-api.component').then(m => m.SignalAPI),
+      },
+      {
+        path: 'computed',
+        loadComponent: () => import('./features/signals-api/components/computed/computed.component').then(m => m.ComputedComponent)
+      },
+    ]
   }
 ];
