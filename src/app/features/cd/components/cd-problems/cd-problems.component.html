@@ -1,8 +1,7 @@
-<h3>Problem</h3>
-
+<h3 class="pt-5">Unidirectional data flow problem</h3>
 @for (product of products; track product.name) {
   <cd-problems-child
     [product]="product"
-    (statusChanged)="onStatusChanged($event)"/>
+    (onStatusChanged)="onStatusChanged($event)"/>
 }
-<p>Total: {{ total }}</p>
+<p class="text-red-400 font-bold">Total: {{ total }}</p>

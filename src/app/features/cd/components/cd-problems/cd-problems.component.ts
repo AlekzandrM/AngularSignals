@@ -7,7 +7,7 @@ import {CdProblemsChildComponent} from "../cd-problems-child/cd-problems-child.c
   imports: [CdProblemsChildComponent],
   templateUrl: './cd-problems.component.html',
   styleUrl: './cd-problems.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class CdProblemsComponent {
   public products = [
@@ -23,6 +23,7 @@ export class CdProblemsComponent {
   public onStatusChanged(newStatus: boolean) {
     if (!newStatus) {
       this.total++;
+      console.log('Total: ', this.total)
     }
   }
 }
