@@ -32,6 +32,10 @@ export const routes: Routes = [
         path: 'computed',
         loadComponent: () => import('./features/signals-api/components/computed/computed.component').then(m => m.ComputedComponent)
       },
+      {
+        path: 'effect',
+        loadComponent: () => import('./features/signals-api/components/effect/effect.component').then(m => m.EffectComponent)
+      },
     ]
   }
 ];

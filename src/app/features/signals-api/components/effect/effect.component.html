@@ -1,1 +1,16 @@
-<p>effect works!</p>
+<div class="mt-4">
+  <p class="text-xl"><strong>Effects</strong></p>
+  <p class="text-xl"><strong>Name:</strong> {{name()}}</p>
+  <div class="flex">
+    <button mat-flat-button (click)="setName()" class="mr-4">Update the name</button>
+    <button mat-flat-button (click)="clean()">Manual Cleanup</button>
+  </div>
+</div>
+<div class="mt-4">
+  <p class="text-xl"><strong>Untracked</strong></p>
+  <p class="text-xl"><strong>computedCount:</strong> {{computedCount()}}, <strong>counter1:</strong> {{counter1()}}</p>
+  <div class="flex">
+    <button mat-flat-button (click)="incrementOne()" class="mr-4">increment1</button>
+    <button mat-flat-button (click)="incrementTwo()">increment2</button>
+  </div>
+</div>
