@@ -1,0 +1,25 @@
+<div class="mt-4">
+  <p class="text-xl">Exercise 1 <strong>Writable -> Computed -> Computed</strong></p>
+  <p class="text-xl">{{c2()}}</p>
+  <div class="flex">
+    <button mat-flat-button class="mr-1.5" (click)="incrementS1()">Increment s1</button>
+  </div>
+</div>
+
+<div class="mt-4">
+  <p class="text-xl">Exercise 2 <strong>Condition s2 > 5</strong></p>
+  <p class="text-xl">{{c4()}}</p>
+  <div class="flex">
+    <button mat-flat-button class="mr-1.5" (click)="incrementS2()">Increment s2</button>
+  </div>
+</div>
+
+<div class="mt-4">
+  <p class="text-xl">Exercise 3 <strong>Writable + Writable -> Computed</strong></p>
+  <p class="text-xl">computed5 = {{c5()}}</p>
+  <div class="flex">
+    <button mat-flat-button class="mr-1.5" (click)="logS3 = !logS3">Toggle logS3: {{logS3}}</button>
+    <button mat-flat-button class="mr-1.5" (click)="incrementS3()">Increment s3</button>
+    <button mat-flat-button class="mr-1.5" (click)="incrementS4()">Increment s4</button>
+  </div>
+</div>
