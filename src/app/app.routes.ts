@@ -41,5 +41,9 @@ export const routes: Routes = [
   {
     path: 'push',
     loadComponent: () => import('./features/push-poll-pull/components/push-poll-pull/push-poll-pull.component').then(m => m.PushPollPullComponent)
+  },
+  {
+    path: 'rxjs',
+    loadComponent: () => import('./features/rxjs/components/rxjx/rxjx.component').then(m => m.RxjxComponent)
   }
 ];

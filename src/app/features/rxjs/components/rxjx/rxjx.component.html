@@ -1,0 +1,39 @@
+<div class="mt-4">
+  <p class="text-xl"><strong>Transforming toSignal/toObservable</strong></p>
+  <p class="text-xl">From Sync Observable to Signal: {{fromSync()}}</p>
+  <p class="text-xl">From Async Observable to Signal: {{fromAsync()}}</p>
+  <p class="text-xl">From Signal to Observable: {{toObservable | async}}</p>
+  <p class="text-xl">From Signal to Observable: {{myObs$ | async}}</p>
+</div>
+
+<div class="mt-4">
+  <p class="text-xl"><strong>Async nature of the effect in toObservable</strong></p>
+  <div class="flex">
+    <button mat-flat-button class="mr-1.5" (click)="updateSubjectValue()">Update Subject</button>
+    <button mat-flat-button class="mr-1.5" (click)="updateSignalValue()">Update Signal</button>
+  </div>
+</div>
+
+<div class="mt-4">
+  <p class="text-xl"><strong>First value</strong></p>
+  <p class="text-xl">From Signal to Observable: {{myObs$ | async}}</p>
+</div>
+
+<div class="mt-4">
+  <p class="text-xl"><strong>Practical task to make search input</strong></p>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter name</mat-label>
+      <input matInput placeholder="enter name" value="" (input)="search.set($any($event.target).value)">
+    </mat-form-field>
+  </form>
+  @if (!loading) {
+    <ul>
+      @for (post of posts(); track post.id) {
+        <li>{{ post?.title }}</li>
+      }
+    </ul>
+  } @else {
+    <p class="text-xl">Loading...</p>
+  }
+</div>
