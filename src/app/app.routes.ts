@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import {input} from "@angular/core";
 
 export const routes: Routes = [
   {
@@ -45,5 +46,15 @@ export const routes: Routes = [
   {
     path: 'rxjs',
     loadComponent: () => import('./features/rxjs/components/rxjx/rxjx.component').then(m => m.RxjxComponent)
+  },
+  {
+    path: 'new',
+    loadComponent: () => import('./features/new-api/Components/new-api-parent/new-api-parent.component').then(m => m.NewApiParentComponent),
+    children: [
+      {
+        path: 'input',
+        loadComponent: () => import('./features/new-api/Components/input/input.component').then(m => m.InputComponent)
+      }
+    ]
   }
 ];

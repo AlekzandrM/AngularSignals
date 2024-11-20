@@ -1,0 +1,16 @@
+<div class="mt-4">
+  <p class="text-xl"><strong>Input counter value {{counterSig()}}</strong></p>
+  <input-child [counterSig]="counterSig()" [counter]="counter" [counterWithTransformSig]="counterSig()"/>
+  <div class="flex">
+    <button mat-flat-button (click)="increaseCounterSig()" class="mr-4">Increase counter</button>
+  </div>
+</div>
+
+<div class="mt-4">
+  <p class="text-xl">Posts:</p>
+  <ul>
+    @for (post of posts(); track post.id) {
+      <li>{{ post?.title }}</li>
+    }
+  </ul>
+</div>
