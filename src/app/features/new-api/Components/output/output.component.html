@@ -1,0 +1,9 @@
+<div class="mt-4">
+  <p class="text-xl"><strong>output</strong></p>
+  <p class="text-xl">OutputItem: {{outputItem() ?? 'not set'}}</p>
+
+
+  @for (item of [1, 2, 3]; track item) {
+    <output-child [item]="item" (outputItem)="outputItem.set($event)"/>
+  }
+</div>

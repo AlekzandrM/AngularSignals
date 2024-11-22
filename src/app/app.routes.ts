@@ -62,6 +62,10 @@ export const routes: Routes = [
       {
         path: 'query',
         loadComponent: () => import('./features/new-api/Components/queries/queries.component').then(m => m.QueriesComponent)
+      },
+      {
+        path: 'output',
+        loadComponent: () => import('./features/new-api/Components/output/output.component').then(m => m.OutputComponent)
       }
     ]
   }
