@@ -1,0 +1,21 @@
+<div class="mt-4">
+  <!--viewchild-->
+  <p #title class="text-xl"><strong>viewchild</strong></p>
+  <ng-container *ngIf="false; else subtitle"></ng-container>
+  <ng-template #subtitle>
+    <p class="text-l">viewchild subtitle</p>
+  </ng-template>
+  <br/>
+
+  <!--contentchild-->
+  <p class="text-xl"><strong>contentchild</strong></p>
+  @for (item of [1, 2]; track item) {
+    <queries-child class="mt-4 block">
+      <p #projectedSubTitle class="text-xl myClass">{{item}} Projected subtitle</p>
+      <div class="flex">
+        <button mat-flat-button (click)="logClick(1)" class="mr-4">Projected Button1</button>
+        <button mat-flat-button (click)="logClick(2)" class="mr-4">Projected Button2</button>
+      </div>
+    </queries-child>
+  }
+</div>

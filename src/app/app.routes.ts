@@ -58,6 +58,10 @@ export const routes: Routes = [
       {
         path: 'model',
         loadComponent: () => import('./features/new-api/Components/model/model.component').then(m => m.ModelComponent)
+      },
+      {
+        path: 'query',
+        loadComponent: () => import('./features/new-api/Components/queries/queries.component').then(m => m.QueriesComponent)
       }
     ]
   }
