@@ -22,9 +22,10 @@ export class OutputChildComponent {
   public item: InputSignal<number> = input.required();
   public outputItem: OutputEmitterRef<number> = output<number>();
 
+  public toObs: Observable<number> = outputToObservable(this.outputItem);
+  public toSig: OutputRef<number> = outputFromObservable(this.toObs);
+
   constructor() {
     this.outputItem.subscribe((item: number) => console.log('Output subscribe: ', item));
-    const toObs: Observable<number> = outputToObservable(this.outputItem);
-    const toSig: OutputRef<number> = outputFromObservable(toObs);
   }
 }

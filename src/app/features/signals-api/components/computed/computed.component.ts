@@ -1,13 +1,14 @@
-import {Component, computed, Signal, signal, WritableSignal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, Signal, signal, WritableSignal} from '@angular/core';
 import {MatButton} from "@angular/material/button";
-import {BehaviorSubject, combineLatest, map, Subject, tap} from "rxjs";
+import {BehaviorSubject, combineLatest, map, tap} from "rxjs";
 import {AsyncPipe} from "@angular/common";
 
 @Component({
   selector: 'computed',
   standalone: true,
   imports: [MatButton, AsyncPipe],
-  templateUrl: './computed.component.html'
+  templateUrl: './computed.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComputedComponent {
   public counter: WritableSignal<number> = signal(1);
@@ -29,7 +30,7 @@ export class ComputedComponent {
   constructor() {
     const counter = signal(1);
     const doubleCount = computed(() => {
-      console.log('Computation')
+      console.log('Computation in doubleCount')
       return counter() * 2
     });
     console.log(doubleCount());
@@ -46,9 +47,4 @@ export class ComputedComponent {
   public decrement(): void {
     this.counter.update(v => v - 1);
   }
-
-  // public update(): void {
-  //   this.value1$.next('Value 1: updated');
-  //   this.value2$.next('Value 2: updated');
-  // }
 }
