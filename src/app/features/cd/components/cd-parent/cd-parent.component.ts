@@ -9,6 +9,6 @@ import {MatChip, MatChipSet} from "@angular/material/chips";
   standalone: true,
   imports: [ RouterOutlet, MatChip, MatChipSet, RouterLink ],
   templateUrl: './cd-parent.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class CdParentComponent { }

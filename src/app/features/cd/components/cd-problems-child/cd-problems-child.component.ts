@@ -12,7 +12,7 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output}
 })
 export class CdProblemsChildComponent implements OnInit {
   @Input() public product!: { name: string; isAvailable: boolean };
-  @Output() public onStatusChanged = new EventEmitter<boolean>();
+  @Output() public onStatusChanged: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public ngOnInit() {
     this.changeStatus();
