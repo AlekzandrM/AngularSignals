@@ -18,12 +18,8 @@ import {MatButton} from "@angular/material/button";
 @Component({
   selector: 'cd-diagram-child',
   standalone: true,
-  imports: [
-    CdDiagramCounterComponent,
-    MatButton
-  ],
+  imports: [ CdDiagramCounterComponent, MatButton ],
   templateUrl: './cd-diagram-child.component.html',
-  styleUrl: './cd-diagram-child.component.scss',
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class CdDiagramChildComponent {

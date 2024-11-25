@@ -7,9 +7,8 @@ import {MatChip, MatChipSet} from "@angular/material/chips";
 @Component({
   selector: 'cd-parent',
   standalone: true,
-  imports: [
-    RouterOutlet, MatChip, MatChipSet, RouterLink
-  ],
+  imports: [ RouterOutlet, MatChip, MatChipSet, RouterLink ],
   templateUrl: './cd-parent.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CdParentComponent { }

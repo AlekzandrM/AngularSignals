@@ -5,10 +5,10 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output}
   standalone: true,
   template: `
     <p>
-      {{ product.name }} -
-      {{ product.isAvailable ? 'Available' : 'Not available' }}
+      {{ product.name }} - {{ product.isAvailable ? 'Available' : 'Not available' }}
     </p>
   `,
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class CdProblemsChildComponent implements OnInit {
   @Input() public product!: { name: string; isAvailable: boolean };

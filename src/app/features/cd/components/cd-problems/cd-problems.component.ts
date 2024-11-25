@@ -5,8 +5,15 @@ import {CdProblemsChildComponent} from "../cd-problems-child/cd-problems-child.c
   selector: 'cd-problems',
   standalone: true,
   imports: [CdProblemsChildComponent],
-  templateUrl: './cd-problems.component.html',
-  styleUrl: './cd-problems.component.scss',
+  template: `
+    <h3 class="pt-5">Unidirectional data flow problem</h3>
+    @for (product of products; track product.name) {
+      <cd-problems-child
+        [product]="product"
+        (onStatusChanged)="onStatusChanged($event)"/>
+    }
+    <p class="text-red-400 font-bold">Total: {{ total }}</p>
+  `,
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class CdProblemsComponent {
@@ -18,7 +25,6 @@ export class CdProblemsComponent {
   public total = 0;
 
   private readonly cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
-
 
   public onStatusChanged(newStatus: boolean) {
     if (!newStatus) {

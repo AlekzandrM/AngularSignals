@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import {input} from "@angular/core";
 
 export const routes: Routes = [
   {

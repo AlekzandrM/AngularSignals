@@ -9,7 +9,6 @@ import {ChangeDetectionStrategy, Component, input, InputSignal} from '@angular/c
       <span class="white-bold-text">{{ count() }} </span>
     </div>
   `,
-  styleUrl: './cd-diagram-counter.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CdDiagramCounterComponent {
