@@ -1,4 +1,4 @@
-import {Component, computed, Signal, signal, WritableSignal} from '@angular/core';
+import {Component, signal, WritableSignal} from '@angular/core';
 import {MatButton} from "@angular/material/button";
 import {products} from "../../constants/products.constant";
 import {IProduct} from "../../interfaces/product.interface";
@@ -6,10 +6,27 @@ import {IProduct} from "../../interfaces/product.interface";
 @Component({
   selector: 'signals-api',
   standalone: true,
-  imports: [
-    MatButton
-  ],
-  templateUrl: './signal-api.component.html'
+  imports: [ MatButton ],
+  template: `
+    <div class="mt-4">
+      <p class="text-xl"><strong>Writable signal:</strong> {{writableSig()}}</p>
+      <div class="flex">
+        <button mat-flat-button class="mr-1.5" (click)="setNewValue()">Set a new value</button>
+        <button mat-flat-button (click)="updateNewValue()">Update a new value</button>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <p class="text-xl"><strong>Writable signal with  ValueEqualityFn:</strong> {{productSig().name}}</p>
+      <div class="flex">
+        <button mat-flat-button class="mr-1.5" (click)="setProductName()">Set product name</button>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <p class="text-xl"><strong>Lazy Signal:</strong> {{helloSig()}}</p>
+    </div>
+  `
 })
 export class SignalAPI {
   public writableSig: WritableSignal<string> = signal('Hello World')
