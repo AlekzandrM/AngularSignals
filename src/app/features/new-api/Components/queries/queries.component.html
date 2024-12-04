@@ -1,8 +1,9 @@
 <div class="mt-4">
   <!--viewchild-->
   <p #title class="text-xl"><strong>viewchild</strong></p>
-  <ng-container *ngIf="false; else subtitle"></ng-container>
-  <ng-template #subtitle>
+  <ng-container #subtitle *ngIf="false; else subtitleTemplateRef"></ng-container>
+
+  <ng-template #subtitleTemplateRef>
     <p class="text-l">viewchild subtitle</p>
   </ng-template>
   <br/>
